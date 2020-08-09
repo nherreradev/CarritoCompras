@@ -24,7 +24,7 @@ function agregarCompra(e) {
 
           const curso = e.target.parentElement.parentElement;
 
-          console.log(curso);
+          
 
           //envio el curso seleccionado para leer sus datos
           leerDatosCurso(curso);
@@ -41,7 +41,7 @@ function leerDatosCurso(curso) {
           id: curso.querySelector('a').getAttribute('data-id')
      }
 
-     console.log(cursoParaMostrarEncarrito);
+
 
 
      insertarEnCarrito(cursoParaMostrarEncarrito);
@@ -82,7 +82,7 @@ function agregarALocalStorageCursosSeleccionados(curso) {
 
      
 
-     console.log(todosLosCursos);
+    
 
      todosLosCursos.push(curso);
      
@@ -137,7 +137,7 @@ function eliminarDeCarrito(e) {
      e.preventDefault();
 
      if (e.target.classList.contains('borrar-curso')) {
-          console.log(e.target.parentElement.parentElement);
+       
           borrarCursoDelLocalStorage(e.target.parentElement.parentElement);
           e.target.parentElement.parentElement.remove();
 
@@ -172,7 +172,7 @@ function vaciarCarritoConUnSoloBoton(e){
      let arregloVacio = [];
 
     
-    console.log('prueba');
+  
 
     document.querySelector('#lista-carrito tbody').remove();
 
@@ -185,7 +185,5 @@ function vaciarCarritoConUnSoloBoton(e){
 
 
 
-
-/*69*/
 
 
