@@ -11,7 +11,7 @@ function listeners(e) {
 
      document.addEventListener('DOMContentLoaded', mostrarEnListaDeCarritoDeComprasCursosRecuperadosDelLocalStorage);
 
-    document.querySelector('#vaciar-carrito').addEventListener('click', vaciarCarritoConUnSoloBoton);
+     document.querySelector('#vaciar-carrito').addEventListener('click', vaciarCarritoConUnSoloBoton);
 
 }
 
@@ -24,7 +24,7 @@ function agregarCompra(e) {
 
           const curso = e.target.parentElement.parentElement;
 
-          
+
 
           //envio el curso seleccionado para leer sus datos
           leerDatosCurso(curso);
@@ -71,7 +71,7 @@ function insertarEnCarrito(curso) {
 
      agregarALocalStorageCursosSeleccionados(curso);
 
-     
+
 
 
 }
@@ -80,12 +80,12 @@ function agregarALocalStorageCursosSeleccionados(curso) {
 
      let todosLosCursos = recuperarArregloDeCursosDelLocalStorage();
 
-     
 
-    
+
+
 
      todosLosCursos.push(curso);
-     
+
 
      localStorage.setItem('cursoEnCarrito', JSON.stringify(todosLosCursos));
 
@@ -96,7 +96,7 @@ function recuperarArregloDeCursosDelLocalStorage() {
      let arregloCursos = [];
 
      if (localStorage.getItem('cursoEnCarrito' === null)) {
-          
+
           arregloCursos = [];
      } else {
           arregloCursos = JSON.parse(localStorage.getItem('cursoEnCarrito'));
@@ -110,7 +110,7 @@ function mostrarEnListaDeCarritoDeComprasCursosRecuperadosDelLocalStorage() {
 
 
      listaCursos = document.querySelector('#lista-carrito tbody');
-     
+
      recuperarArregloDeCursosDelLocalStorage().forEach(curso => {
 
           const fila = document.createElement('tr');
@@ -137,7 +137,7 @@ function eliminarDeCarrito(e) {
      e.preventDefault();
 
      if (e.target.classList.contains('borrar-curso')) {
-       
+
           borrarCursoDelLocalStorage(e.target.parentElement.parentElement);
           e.target.parentElement.parentElement.remove();
 
@@ -165,18 +165,18 @@ function borrarCursoDelLocalStorage(cursoAEliminar) {
 
 }
 
-function vaciarCarritoConUnSoloBoton(e){
+function vaciarCarritoConUnSoloBoton(e) {
 
      e.preventDefault();
 
      let arregloVacio = [];
 
-    
-  
 
-    document.querySelector('#lista-carrito tbody').remove();
 
-    localStorage.setItem('cursoEnCarrito', JSON.stringify(arregloVacio) );
+
+     document.querySelector('#lista-carrito tbody').remove();
+
+     localStorage.setItem('cursoEnCarrito', JSON.stringify(arregloVacio));
 
 
 
