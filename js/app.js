@@ -48,6 +48,7 @@ function leerDatosCurso(curso) {
 
 }
 
+
 function insertarEnCarrito(curso) {
 
      listaCursos = document.querySelector('#lista-carrito tbody');
